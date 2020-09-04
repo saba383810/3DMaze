@@ -7,18 +7,6 @@ public class WarpSystem : MonoBehaviour
     public GameObject window1;
     public GameObject window2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        CloseWindow();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetWindow()
     {
         window1.SetActive(true);

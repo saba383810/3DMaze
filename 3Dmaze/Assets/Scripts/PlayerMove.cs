@@ -13,12 +13,14 @@ public class PlayerMove : MonoBehaviour
     {
         eventsystem =  GameObject.Find("EventSystem");
         warpSystem = eventsystem.GetComponent<WarpSystem>();
+        warpSystem.CloseWindow();
         windowflag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //上向矢印キーが押されたら前へ進む
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.position += transform.forward * 0.1f;
@@ -27,9 +29,9 @@ public class PlayerMove : MonoBehaviour
                 windowflag = false;
                 warpSystem.CloseWindow();
             }
-
         }
 
+        //下向矢印キーが押されたら後ろに下がる
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.position -= transform.forward * 0.1f;
@@ -40,6 +42,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
+        //左向矢印キーが押されたら左向きに回る
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, -3, 0);
@@ -50,6 +53,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
+        //右向矢印キーが押されたら右向きに回る
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(0, 3, 0);
@@ -59,7 +63,7 @@ public class PlayerMove : MonoBehaviour
                 warpSystem.CloseWindow();
             }
         }
-
+        //spaceキーが押されたらワープするか聞く。
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (windowflag == true)
