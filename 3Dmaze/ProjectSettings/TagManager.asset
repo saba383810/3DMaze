@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Goal1
+  - BrokenWall
+  - KeyItem
   layers:
   - Default
   - TransparentFX

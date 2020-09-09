@@ -23,7 +23,16 @@ public class PlayerMove : MonoBehaviour
         //上向矢印キーが押されたら前へ進む
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += transform.forward * 0.1f;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                transform.position += transform.forward * 0.3f;
+            }
+            else
+            {
+                transform.position += transform.forward * 0.1f;
+            }
+
+    
             if (windowflag == true)
             {
                 windowflag = false;
@@ -34,7 +43,15 @@ public class PlayerMove : MonoBehaviour
         //下向矢印キーが押されたら後ろに下がる
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position -= transform.forward * 0.1f;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                transform.position -= transform.forward * 0.3f;
+            }
+            else
+            {
+                transform.position -= transform.forward * 0.1f;
+            }
+
             if (windowflag == true)
             {
                 windowflag = false;
